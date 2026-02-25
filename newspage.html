@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nessa Lorraine T. Abe and Arrianie Janine T. Lazaro">
+        <meta name="keywords" content="HTML, CSS, Javascript">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="revised" content="02/23/2025">
+        <link rel="stylesheet" href="newspagecss.css">
+        <title>NEWS</title>
+    </head>
+    <body>
+        <nav>
+            <img src="bigkislogo-removebg-preview.png">
+            <div class="indicators">
+                        <img class="dot active-dot" data-index="0" src="oldlakanlogo-removebg-preview.png" alt="Lakan"/>
+                        <img class="dot" data-index="1" src="olddatulogo-removebg-preview.png" alt="Datu"/>
+                        <img class="dot" data-index="2" src="oldrajahlogo-removebg-preview.png" alt="Rajah"/>
+                        <img class="dot" data-index="3" src="oldsultanlogo-removebg-preview.png" alt="Sultan"/>
+                    </div>
+            <ul>
+                <li id="nav-home"><a href="index.html"><script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/jeuxydnh.json" trigger="hover" stroke="bold" colors="primary:#5c0e0a,secondary:#c71f16" style="width: 2.5vw;height: 6vh;position: relative;"></lord-icon><p>HOME</p></a></li>
+                <li id="nav-news"><a href="newspage.html"><script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/xovdoewm.json" trigger="hover" stroke="bold" colors="primary:#5c0e0a,secondary:#c71f16" style="width: 2.5vw;height: 6vh;position: relative;"></lord-icon><p>NEWS</p></a></li>
+                <li id="nav-events"><a href="eventspage.html"><script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/cvwrvyjv.json" trigger="hover" stroke="bold" colors="primary:#5c0e0a,secondary:#c71f16" style="width: 2.5vw;height: 6vh;position: relative;"></lord-icon><p>TEAMS</p></a></li>
+                <li id="nav-about"><a href="aboutpage.html"><script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/yxczfiyc.json" trigger="hover" stroke="bold" colors="primary:#5c0e0a,secondary:#c71f16" style="width: 2.5vw;height: 6vh;"></lord-icon><p>ABOUT</p></a></li>
+            </ul>
+        </nav>
+        <main>
+            <section class="carousel next">
+                <div class="list">
+                    <article class="item active">
+                        <div class="main-content" style="background-color: #F5E376"></div>
+                    </article>
+                    <article class="item other_2">
+                        <div class="main-content" style="background-color: #ACBCEB"></div>
+                    </article>
+                    <article class="item">
+                        <div class="main-content" style="background-color: #A4F582"></div>
+                    </article>
+                    <article class="item other_1">
+                        <div class="main-content" style="background-color: #EA8373"></div>
+                    </article>
+                </div>
+            </section>
+
+            <div class="chart-container">
+                <h2 class="chart-heading">Bigkis 2026 Current Team Ranking</h2>
+                <canvas id="custom-chart"></canvas>
+            </div>
+            <div class="vertical-slider">
+                <div class="vslider-list">
+                    <div class="vslider-item">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="bballmendatulakan.jpg" alt="">
+                                <p class="slide-caption">Basketball Men  Datu vs Lakan</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="bballmendatulakan.jpg" alt="">
+                                <p class="slide-caption2">Winner: Lakan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vslider-item">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="bballwomendatusultan.jpg" alt="">
+                                <p class="slide-caption">Basketball Women  Datu vs Sultan</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="bballwomendatusultan.jpg" alt="">
+                                <p class="slide-caption2">Winner: Datu</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vslider-item">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="vballmendatusultan.jpg" alt="">
+                                <p class="slide-caption">Volleyball Men  Datu vs Sultan</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="vballmendatusultan.jpg" alt="">
+                                <p class="slide-caption2">Winner: Datu</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vslider-item">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="vballmenlakanrajah.png" alt="">
+                                <p class="slide-caption">Volleyball Men  Lakan vs Rajah</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="vballmenlakanrajah.png" alt="">
+                                <p class="slide-caption2">Winner: Rajah</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vslider-item">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="vballwomendatusultan.jpg" alt="">
+                                <p class="slide-caption">Volleyball Women  Datu vs Sultan</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="vballwomendatusultan.jpg" alt="">
+                                <p class="slide-caption2">Winner: Datu</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vslider-item">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="vballwomenlakanrajah.png" alt="">
+                                <p class="slide-caption">Volleyball Women  Lakan vs Rajah</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="vballwomenlakanrajah.png" alt="">
+                                <p class="slide-caption2">Winner: Lakan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vslider-item">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="bballmendatulakan.jpg" alt="">
+                                <p class="slide-caption">Basketball Men  Datu vs Lakan</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="bballmendatulakan.jpg" alt="">
+                                <p class="slide-caption2">Winner: Lakan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vslider-item">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="bballwomendatusultan.jpg" alt="">
+                                <p class="slide-caption">Basketball Women  Datu vs Sultan</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="bballwomendatusultan.jpg" alt="">
+                                <p class="slide-caption2">Winner: Datu</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vslider-item">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="vballmendatusultan.jpg" alt="">
+                                <p class="slide-caption">Volleyball Men  Datu vs Sultan</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="vballmendatusultan.jpg" alt="">
+                                <p class="slide-caption2">Winner: Datu</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vslider-item">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="vballmenlakanrajah.png" alt="">
+                                <p class="slide-caption">Volleyball Men  Lakan vs Rajah</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="vballmenlakanrajah.png" alt="">
+                                <p class="slide-caption2">Winner: Rajah</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vslider-item">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="vballwomendatusultan.jpg" alt="">
+                                <p class="slide-caption">Volleyball Women  Datu vs Sultan</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="vballwomendatusultan.jpg" alt="">
+                                <p class="slide-caption2">Winner: Sultan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vslider-item">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="vballwomenlakanrajah.png" alt="">
+                                <p class="slide-caption">Volleyball Women — Lakan vs Rajah</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="vballwomenlakanrajah.png" alt="">
+                                <p class="slide-caption2">Winner: Lakan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="results-footer">RESULTS OF LATEST PREGAMES</h2>
+            <div class="vertical-slider2">
+                <div class="vslider-list2">
+                    <div class="vslider-item2">
+                        <img src="basketballmentemp.jpg" alt="">
+                        <p class="slide-caption2nd">Basketball Men  Rajah vs Sultan</p>
+                    </div>
+                    <div class="vslider-item2">
+                        <img src="basketballwomentemp.jpg" alt="">
+                        <p class="slide-caption2nd">Basketball Women  Lakan vs Rajah</p>
+                    </div>
+                    <div class="vslider-item2">
+                        <img src="frisbeementemp.jpg" alt="">
+                        <p class="slide-caption2nd">Frisbee Men  Datu vs Rajah</p>
+                    </div>
+                    <div class="vslider-item2">
+                        <img src="frisbeementemp.jpg" alt="">
+                        <p class="slide-caption2nd">Frisbee Men  Lakan vs Sultan</p>
+                    </div>
+                    <div class="vslider-item2">
+                        <img src="frisbeewomentemp.jpg" alt="">
+                        <p class="slide-caption2nd">Frisbee Women  Datu vs Lakan</p>
+                    </div>
+                    <div class="vslider-item2">
+                        <img src="frisbeewomentemp.jpg" alt="">
+                        <p class="slide-caption2nd">Frisbee Women  Rajah vs Sultan</p>
+                    </div>
+                    <div class="vslider-item2">
+                        <img src="basketballmentemp.jpg" alt="">
+                        <p class="slide-caption2nd">Basketball Men  Rajah vs Sultan</p>
+                    </div>
+                    <div class="vslider-item2">
+                        <img src="basketballwomentemp.jpg" alt="">
+                        <p class="slide-caption2nd">Basketball Women  Lakan vs Rajah</p>
+                    </div>
+                    <div class="vslider-item2">
+                        <img src="frisbeementemp.jpg" alt="">
+                        <p class="slide-caption2nd">Frisbee Men  Datu vs Rajah</p>
+                    </div>
+                    <div class="vslider-item2">
+                        <img src="frisbeementemp.jpg" alt="">
+                        <p class="slide-caption2nd">Frisbee Men  Lakan vs Sultan</p>
+                    </div>
+                    <div class="vslider-item2">
+                        <img src="frisbeewomentemp.jpg" alt="">
+                        <p class="slide-caption2nd">Frisbee Women  Datu vs Lakan</p>
+                    </div>
+                    <div class="vslider-item2">
+                        <img src="frisbeewomentemp.jpg" alt="">
+                        <p class="slide-caption2nd">Frisbee Women  Rajah vs Sultan</p>
+                    </div>
+                </div>
+            </div>
+            <h2 class="results-footer2">UPCOMING PREGAMES</h2>
+            <div class="scroller">
+                <div class = "scroller-inner" data-contents="">
+                <div class="scroller-item">FRISBEE MEN AND WOMEN PREGAMES ON THURSDAY</div>
+                <div class="scroller-item">7 DAYS LEFT BEFORE BIGKIS 2026</div>
+                <div class="scroller-item">BLEACHEER COMPETITION ON DAY 1</div>
+                </div>
+            </div>
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+        <script>
+let carousel = document.querySelector('.carousel');
+let items = document.querySelectorAll('.carousel .item');
+let countItem = items.length;
+let active = 0;
+let other_1 = countItem - 1;
+let other_2 = 1;
+
+const dots = document.querySelectorAll('.dot');
+
+const slideColors = [
+    { primary: '#ED8E0C', secondary: '#F57F07', text: '#585c02', border: '#585c02', scroller: '#585c02' },
+    { primary: '#3440FF', secondary: '#0E01FF', text: '#080543', border: '#080543', scroller: '#080543' },
+    { primary: '#64F457', secondary: '#03F401', text: '#063f07', border: '#063f07', scroller: '#063f07' },
+    { primary: '#F8343A', secondary: '#F50008', text: '#6d0c05', border: '#6d0c05', scroller: '#6d0c05' },
+];
+
+const teamColors = [
+    ["#939300", "#aa9955", "#a0dd22", "#db9324"],
+    ["#5968a6", "#040a42", "#3994c6", "#6038c7"],
+    ["#5ae11e", "#27c1d8", "#003004", "#4cb368"],
+    ["#d26c2d", "#d72869", "#ca5235", "#720000"],
+];
+
+dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+        let index = parseInt(dot.getAttribute('data-index'));
+        carousel.classList.remove('prev', 'next');
+        carousel.classList.add(index > active ? 'next' : 'prev');
+        active = index;
+        other_1 = active - 1 < 0 ? countItem - 1 : active - 1;
+        other_2 = active + 1 >= countItem ? 0 : active + 1;
+        changeSlider();
+        updateDots();
+        updateNavColors();
+    });
+});
+
+function updateDots() {
+    dots.forEach(d => d.classList.remove('active-dot'));
+    dots[active].classList.add('active-dot');
+}
+
+function updateNavColors() {
+    const color = slideColors[active];
+    document.querySelectorAll('lord-icon').forEach(icon => {
+        icon.setAttribute('colors', `primary:${color.primary},secondary:${color.secondary}`);
+    });
+    document.querySelectorAll('nav ul li a p').forEach(p => {
+        p.style.color = color.text;
+    });
+    dots.forEach(dot => {
+        dot.style.borderColor = 'transparent';
+    });
+    dots[active].style.borderColor = color.border;
+    document.querySelectorAll('.scroller-item').forEach(item => {
+        item.style.color = color.scroller;
+    });
+
+    const currentTeamColors = teamColors[active];
+    programmingChart.data.datasets[0].backgroundColor = [0, 1, 2, 3].map((i) =>
+        i === active ? color.primary : currentTeamColors[i]
+    );
+
+    programmingChart.options.scales.x.ticks.color = ['#333333', '#333333', '#333333', '#333333'];
+    programmingChart.update();
+}
+
+const changeSlider = () => {
+    let itemOldActive = document.querySelector('.carousel .item.active');
+    if(itemOldActive) itemOldActive.classList.remove('active');
+    let itemOldOther_1 = document.querySelector('.carousel .item.other_1');
+    if(itemOldOther_1) itemOldOther_1.classList.remove('other_1');
+    let itemOldOther_2 = document.querySelector('.carousel .item.other_2');
+    if(itemOldOther_2) itemOldOther_2.classList.remove('other_2');
+
+    items[active].classList.add('active');
+    items[other_1].classList.add('other_1');
+    items[other_2].classList.add('other_2');
+}
+
+let customChart = document.getElementById("custom-chart").getContext("2d");
+
+let programmingChart = new Chart(customChart, {
+    type: "bar",
+    data: {
+        labels: ["Lakan", "Datu", "Rajah", "Sultan"],
+        datasets: [
+            {
+                data: [100, 105, 110, 90],
+                backgroundColor: ["#D4B800", "#4A5FD4", "#5ABF3A", "#D44040"],
+                hoverBackgroundColor: ["#F5E376", "#ACBCEB", "#A4F582", "#EA8373"],
+                borderWidth: 0,
+                hoverBorderWidth: 4,
+                hoverBorderColor: ["#D4B800", "#4A5FD4", "#5ABF3A", "#D44040"],
+            },
+        ],
+    },
+    options: {
+        maintainAspectRatio: false,
+        animation: {
+            duration: 400,
+            easing: 'easeInOutQuart',
+        },
+        scales: {
+            y: { display: false },
+            x: {
+                ticks: {
+                    font: {
+                        size: 25,
+                        family: "'Love Ya Like A Sister'",
+                        weight: 'bold',
+                        style: 'italic',
+                    },
+                    color: ['#333333', '#333333', '#333333', '#333333'],
+                }
+            }
+        },
+        plugins: {
+            legend: { display: false },
+            tooltip: {
+                enabled: true,
+                callbacks: {
+                    label: function(context) {
+                        return ` Score: ${context.raw}`;
+                    }
+                },
+                backgroundColor: 'rgba(0,0,0,0.7)',
+                titleFont: {
+                    family: "'Love Ya Like A Sister'",
+                    size: 20,
+                },
+                bodyFont: {
+                    family: "'Love Ya Like A Sister'",
+                    size: 18,
+                },
+                padding: 12,
+                cornerRadius: 8,
+            }
+        },
+        onHover: (event, chartElements) => {
+            event.native.target.style.cursor = chartElements.length ? 'pointer' : 'default';
+
+            const colors = ['#333333', '#333333', '#333333', '#333333'];
+
+            if (chartElements.length > 0) {
+                const index = chartElements[0].index;
+                colors[index] = slideColors[active].primary;
+            }
+
+            programmingChart.options.scales.x.ticks.color = colors;
+            programmingChart.update('none');
+        },
+    }
+});
+
+updateNavColors();
+const vslider = document.querySelector('.vertical-slider');
+const vsliderItems = document.querySelectorAll('.vslider-item');
+
+vsliderItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        vslider.classList.add('is-hovered');
+    });
+    item.addEventListener('mouseleave', (e) => {
+        const related = e.relatedTarget;
+        if (!related || !related.closest('.vslider-item')) {
+            vslider.classList.remove('is-hovered');
+        }
+    });
+});
+            
+const vslider2 = document.querySelector('.vertical-slider2');
+const vsliderItems2 = document.querySelectorAll('.vslider-item2');
+
+vsliderItems2.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        vslider2.classList.add('is-hovered');
+    });
+    item.addEventListener('mouseleave', (e) => {
+        const related = e.relatedTarget;
+        if (!related || !related.closest('.vslider-item2')) {
+            vslider2.classList.remove('is-hovered');
+        }
+    });
+});
+        </script>
+    </body>
+</html>
