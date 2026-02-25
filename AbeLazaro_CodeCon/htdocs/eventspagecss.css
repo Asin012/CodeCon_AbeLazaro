@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Joti+One&family=Julee&family=Love+Ya+Like+A+Sister&family=Reggae+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--theme-color);
+    font-family: sans-serif;
+    transition: background 0.5s ease;
+}
+
+:root{
+    --theme-color: #ED8E0C;
+    --calculate: 0.5;
+    --w-image: 75vw;
+}
+
+body::before{
+    content: "";
+    position: fixed;
+    z-index: -2;
+    box-shadow: inset 0 0 0 18px var(--theme-color);
+    pointer-events: none;
+    transition: 0.5s ease;
+}
+
+nav{
+    margin-top: 5vh;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5vw;
+    position: absolute;
+    z-index: 9999;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li{
+    margin-right: 2vw;
+    padding: 1vw 0.75vw;
+    width: 4vw;
+    height: 8vh;
+    background: #fff;
+    border-radius: 2vw;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+    box-shadow: 0 0.5vh 1.3vh rgba(0,0,0,0.4);
+}
+
+nav ul li:hover{
+    width: 10vw;
+}
+
+nav ul li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+nav ul li a p{
+    font-size: 3vh;
+    font-family: "Joti One";
+    margin-left: 0.5vw;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+nav ul li:hover a p{
+    opacity: 1;
+}
+
+nav > img{
+    width: 10vw;
+    height: 10vh;
+    object-fit: contain;
+}
+
+.carousel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.carousel .list{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel .item{
+    position: absolute;
+    display: none;
+}
+
+.carousel .item.active,
+.carousel .item.other_1,
+.carousel .item.other_2{
+    display: block;
+}
+
+.carousel .item .main-content{
+    width: 100%;
+    height: 100%;
+}
+
+.carousel .item.active .main-content{
+    animation: reveal 0.8s ease;
+}
+
+@keyframes reveal{
+    from{ clip-path: circle(0% at 70% 50%); }
+    to{ clip-path: circle(120% at 70% 50%); }
+}
+
+#wrapper{
+    position: relative;
+    z-index: 3;
+    height: 100vh;
+    overflow-y: auto;
+    perspective: 10px;
+}
+
+.container{
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+/* Parallax layers */
+.background{
+    transform: translateZ(-40px) scale(4.5);
+}
+
+.foreground{
+    transform: translateZ(-20px) scale(2.8);
+}
+
+.background, .foreground{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section{
+    position: relative;
+    z-index: 5;
+    background: rgba(45,45,45,0.92); 
+    color: white;
+    padding: 5rem 0;
+}
+
+.secHeading{
+    font-family: "Joti One";
+    font-size: 5rem;
+    padding: 0 10rem;
+}
+
+.text{
+    font-family: "Love Ya Like A Sister";
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin: 4rem 0;
+}
+
+.bg{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.desc{
+    font-family: "Reggae One";
+    position: absolute;
+    background: white;
+    padding: 0.5rem 1rem;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 3rem;
+    box-shadow: 0 0.5vh 1.3vh rgba(0,0,0,0.4);
+}
+
+/* Images */
+.bg1{ background-image: url(../images/lakanbanner.jpg); }
+.bg2{ background-image: url(../images/datubanner.jpg); }
+.bg3{ background-image: url(../images/rajahbanner.jpg); }
+.bg4{ background-image: url(../images/sultanbanner.jpg); }
+
+.dot{
+    width: 5vh;
+    height: 5vh;
+    object-fit: contain;
+    cursor: pointer;
+    opacity: 0.4;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.dot.active-dot{
+    opacity: 1;
+    filter: grayscale(0);
+    transform: scale(1.2);
+}
