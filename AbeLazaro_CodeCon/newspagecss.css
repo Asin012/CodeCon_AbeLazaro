@@ -1,0 +1,601 @@
+@import url('https://fonts.googleapis.com/css2?family=Joti+One&family=Julee&family=Love+Ya+Like+A+Sister&family=Reggae+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barrio&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    background-color: white;
+    overflow: hidden;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+nav {
+    margin-top: 5vh;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5vw;
+    position: absolute;
+    z-index: 9999;
+}
+
+nav ul {
+    align-content: right;
+    width: auto;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+nav ul li {
+    margin-right: 2vw;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    padding: 1vw 0.75vw;
+    width: 4vw;
+    height: 8vh;
+    background-color: #fff;
+    border-radius: 2vw;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    box-shadow: 0 0.5vh 1.3vh rgba(0, 0, 0, 0.4),
+                0 0.25vh 0.5vh rgba(0, 0, 0, 0.3);
+}
+
+nav ul li:hover {
+    width: 10vw;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: green;
+    padding: 0;
+}
+
+nav ul li a p {
+    font-size: 3vh;
+    font-family: "Joti One";
+    margin-left: 0.5vw;
+    opacity: 0;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: opacity 0.4s ease 0.1s;
+}
+
+nav ul li.active-nav {
+    background-color: #5c0e0a;
+}
+
+nav ul li.active-nav a p {
+    color: #ffffff;
+    opacity: 1;
+}
+
+nav ul li:hover a p {
+    opacity: 1;
+}
+
+nav > img {
+    width: 18vw;
+    height: 18vh;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.indicators {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    flex: 1;
+}
+
+.dot {
+    width: 12vh;
+    height: 12vh;
+    object-fit: contain;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+    border-radius: 50%;
+    border: 0.25vh solid transparent;
+    margin-right: 1vw;
+}
+
+.dot.active-dot {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.3);
+    border: 0.25vh solid transparent;
+}
+
+:root {
+    --calculate: 0.5;
+    --w-image: 75vw;
+    --h-image: 100vh;
+    --border-color: #ffffff55;
+}
+
+.carousel {
+    margin-top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel .list {
+    height: 100%;
+    position: relative;
+}
+
+.carousel .list::before {
+    position: absolute;
+    width: var(--w-image);
+    height: 100%;
+    content: "";
+    top: 0;
+    left: calc(100% - calc(var(--w-image) * var(--calculate)));
+    z-index: 10;
+    pointer-events: none;
+}
+
+.carousel .list::after {
+    position: absolute;
+    top: 5.5vh;
+    left: 5vw;
+    content: "";
+    width: 40vw;
+    height: 35vh;
+    z-index: 10;
+    pointer-events: none;
+    border-radius: 2vw 5vw 11vw 23vw;
+    filter: blur(15vw);
+    opacity: 0.6;
+}
+
+.carousel .list .item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.carousel .list .item.active,
+.carousel .list .item.other_1,
+.carousel .list .item.other_2 {
+    display: block;
+}
+
+.carousel .list .item.active {
+    z-index: 2;
+}
+
+.carousel .list .item.other_1,
+.carousel .list .item.other_2 {
+    pointer-events: none;
+}
+
+.carousel .list .item .main-content {
+    height: 100%;
+    display: grid;
+    grid-template-columns: calc(100% - calc(var(--w-image) * var(--calculate)));
+}
+
+.carousel .list .item.active .main-content {
+    animation: showContent 1s ease-in-out 1 forwards;
+}
+
+@keyframes showContent {
+    from { clip-path: circle(0% at 70% 50%); }
+    to { clip-path: circle(100% at 70% 50%); }
+}
+
+.next .item.other_1 {
+    z-index: 1;
+}
+
+.arrows {
+    z-index: 10;
+}
+
+.prev .list .item.other_2 .main-content {
+    opacity: 0;
+}
+
+@media screen and (max-width: 1023px) {
+    :root {
+        --calculate: 1;
+        --w-image: 40vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .carousel .list .item .main-content .content {
+        display: none;
+    }
+}
+
+.chart-container {
+    width: 65vw;
+    height: 50vh;
+    position: absolute;
+    left: 17vw;
+    bottom: 17.5vh;
+    z-index: 10000;
+    padding: 1vh;
+    border-radius: 1vw;
+    overflow: visible;
+}
+
+#custom-chart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.chart-heading {
+    position: relative;
+    top: -8vh;
+    font-family: "Julee", cursive;
+    font-size: 9vh;
+    color: #333333;
+    text-align: center;
+    transition: transform 0.5s ease, letter-spacing 0.5s ease, text-shadow 0.5s ease;
+    cursor: default;
+    display: inline-block;
+    width: 100%;
+}
+
+.chart-heading:hover {
+    transform: translateY(-1.5vh) scale(1.00);
+    letter-spacing: 0.15vw;
+    text-shadow: 0 0.5vh 5vh white;
+}
+
+.vertical-slider {
+    position: absolute;
+    right: 2vw;
+    top: 15vh;
+    width: 15vw;
+    height: 80vh;
+    overflow: hidden;
+    z-index: 9999;
+    mask: linear-gradient(
+        to bottom,
+        transparent,
+        #000 15% 85%,
+        transparent
+    );
+}
+
+.vslider-list {
+    display: flex;
+    flex-direction: column;
+    animation: scrollUp 15s linear infinite;
+}
+
+.vslider-item {
+    width: 15vw;
+    height: 20vh;
+    flex-shrink: 0;
+    padding-bottom: 2vh;
+    position: relative;
+    perspective: 1000px;   
+    overflow: visible;     
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+.vslider-item img {
+    border: 0.25vh solid white;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1vw;
+    box-shadow: 1.5vh 1.5vh 0.5vh black;
+    transition: filter 0.5s ease;
+}
+
+.vslider-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 4.5vh);
+    background: rgba(0, 0, 0, 0);
+    border-radius: 1vw;
+    transition: background 0.5s ease;
+    pointer-events: none;
+    z-index: 1;
+    box-shadow: 0.5vh 0.5vh 1vh black;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 2vh);
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    border-radius: 1vw;
+}
+
+.vslider-item:hover .flip-card-inner {
+    transform: rotateY(180deg);  
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;  
+    border-radius: 1vw;
+    overflow: hidden;
+}
+
+.flip-card-front {
+    z-index: 2;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);   
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.flip-card-front img,
+.flip-card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1vw;
+}
+
+.slide-caption {
+    text-shadow: 3vh 3vh 5vh black;
+    position: absolute;
+    bottom: 2.5vh;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: "Barrio";
+    font-size: 3vh;
+    font-weight: bold;
+    padding: 1vh 0.5vw 0.5vh;
+    border-radius: 0 0 1vw 1vw;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.slide-caption2 {
+    text-shadow: 1.5vh 1.5vh 1.5vh black;
+    position: absolute;
+    bottom: 1vh;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family:"Barrio";
+    font-size: 5vh;
+    font-weight: bold;
+    padding: 1vh 0.5vw 0.5vh;
+    border-radius: 0 0 1vw 1vw;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.vslider-item:hover .slide-caption {
+    opacity: 1;
+}
+
+.vertical-slider:hover .vslider-item::after {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.vertical-slider:hover .vslider-item:hover::after {
+    background: rgba(0, 0, 0, 0);
+}
+
+.vertical-slider:hover .vslider-item img {
+    filter: grayscale(1);
+}
+
+.vertical-slider:hover .vslider-item:hover img {
+    filter: grayscale(0);
+}
+
+@keyframes scrollUp {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+}
+.results-footer {
+    border: 0.5vh solid #333333;
+    background-color: white;
+    position: absolute;
+    right: 2vw;
+    bottom: 1vh;
+    width: 15vw;
+    text-align: center;
+    font-family: "Barrio";
+    font-size: 3vh;
+    color: #333333;
+    z-index: 9999;
+    letter-spacing: 0.05vw;
+}
+
+.vertical-slider2 {
+    position: absolute;
+    left: 2vw;
+    top: 15vh;
+    width: 15vw;
+    height: 80vh;
+    overflow: hidden;
+    z-index: 9999;
+    mask: linear-gradient(
+        to bottom,
+        transparent,
+        #000 15% 85%,
+        transparent
+    );
+}
+
+.vslider-list2 {
+    display: flex;
+    flex-direction: column;
+    animation: scrollDown 15s linear infinite;
+}
+
+.vertical-slider2.is-hovered .vslider-list2 {
+    animation-play-state: paused;
+}
+
+.vslider-item2 {
+    width: 15vw;
+    height: 17.5vh;
+    flex-shrink: 0;
+    padding-bottom: 2vh;    
+    position: relative;
+    perspective: 1000px;
+    overflow: visible;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+.vslider-item2 img {
+    border: 0.25vh solid white;
+    width: 100%;
+    height: 100%;             
+    object-fit: cover;
+    border-radius: 1vw; 
+    transition: filter 0.5s ease;
+    box-shadow: 0.5vh 0.5vh 1vh black; 
+}
+
+.vslider-item2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 2vh);  
+    background: rgba(0, 0, 0, 0);
+    border-radius: 1vw;
+    transition: background 0.5s ease;
+    pointer-events: none;
+    z-index: 1; 
+}
+
+.slide-caption2nd {
+    text-shadow: 3vh 3vh 5vh black;
+    position: absolute;
+    bottom: 4vh;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: "Barrio";
+    font-size: 3vh;
+    font-weight: bold;
+    padding: 1vh 0.5vw 0.5vh;
+    border-radius: 0 0 1vw 1vw;
+    z-index: 2;
+    pointer-events: none;
+}
+
+
+.vertical-slider2.is-hovered .vslider-item2:not(:hover)::after {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.vertical-slider2.is-hovered .vslider-item2:not(:hover) img {
+    filter: grayscale(1);
+}
+
+.vertical-slider2.is-hovered .vslider-item2:hover img {
+    filter: grayscale(0);
+}
+
+@keyframes scrollUp {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+}
+
+@keyframes scrollDown {
+    0%   { transform: translateY(-50%); }
+    100% { transform: translateY(0%); }
+}
+
+.results-footer2 {
+    border: 0.5vh solid #333333;
+    background-color: white;
+    position: absolute;
+    left: 2vw;
+    bottom: 2vh;
+    width: 15vw;
+    text-align: center;
+    font-family: "Barrio";
+    font-size: 3vh;
+    color: #333333;
+    z-index: 9999;
+    letter-spacing: 0.05vw;
+}
+
+.scroller{
+    box-shadow: 0 0.5vh 2vh rgba(0, 0, 0, 0.3);
+    top: 93.5vh;      
+    left: 0;  
+    z-index: 100;
+    position: absolute;
+    width: 100vw;
+    background-color: white;
+}
+.scroller-item{
+    font-family: "Joti One";
+    padding: 0 2vw; 
+    white-space: nowrap;
+    font-size: 2.5vh;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
+
+.scroller-inner{
+    display: inline-flex;
+    animation: scrollLeft 20s linear infinite;
+}
+
+@keyframes scrollLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
